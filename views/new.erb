@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News Aggregator:</title>
+  </head>
+
+  <h1>Launcher News:</h1>
+
+  <h2>Add an interesting Article!</h2>
+  <body>
+
+    <form action="/articles/new" method="post">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title">
+      <br>
+      <label for="url">URL:</label>
+      <input type="text" id="url" name="url">
+      <br>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description">
+      <br>
+      <input type="submit">
+      <br>
+      <a href='/articles'>View all Articles</a>
+    </form>
+
+    <% if !@errors.nil? %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+    </ul>
+    <% end %>
+
+  </body>
