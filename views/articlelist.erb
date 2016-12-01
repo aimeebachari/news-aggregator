@@ -6,10 +6,10 @@
 
   <h2>Launcher News!</h2>
   <body>
-  <% CSV.foreach('articles.csv', headers:true) do |row| %>
-    Title: <%= row[0] %>
-    URL: <a href='<%= row[1] %>' target= '_blank'><%= row[1] %></a>
-    Description: <%= row[2] %>
+  <% @articles.each do |article| %>
+    Title: <%= article["Title"] %>
+    URL: <a href='<%= article[" URL"] %>' target= '_blank'><%= article[" URL"] %></a>
+    Description: <%= article[" Description"] %>
     <br>
     <% end %>
   </body>
